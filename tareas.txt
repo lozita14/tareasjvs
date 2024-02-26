@@ -1,0 +1,1 @@
+en jvs hacer tabla del 8 y mostrar en un div(una funcion con un input tipo number con un boton,y muestre su tabla)

@@ -11,11 +11,22 @@
             border-radius: 10px;
             height: 100px;
             margin:auto;
-            
+            padding: 10px;
+            overflow: auto;
         }
     </style>
     <script>
     
+    function aimprimeAlineacion(){
+        let display = document.getElementById("display");
+        display.innerHTML = "<ol>";
+        for(let i = 0;i<alineacion.length;i++){
+            display.innerHTML = display.innerHTML+ "<li>"+ alineacion[i]+"</li>"
+        }
+    }
+    display.innerHTML = display.innerHTML+"</ol>"
+
+
     </script>
 </head>
 <body>
