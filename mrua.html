@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display{
+            border: solid red 2px;
+        }
+        /**/
+    </style>
+</head>
+<body>
+    <h1>Cálculo de la posicion de un objeto (x) con MRUA</h1>
+    <button onclick="calculaPosicion()">MRUA</button>
+    <h1>Formlario Posicion</h1>
+    <label for="acceleracion">acceleracion</label>
+    <input type="number" id="acceleracion">
+
+    <label for="tiempo">Tiempo</label>
+    <input type="number" id="tiempo">
+
+    <button onclick="calculaPosicionFormulario()">calcula</button>
+
+    <div id="display"></div>
+    <script>
+
+        function calculaPosicionFormulario(){
+            let acceleracion= document.getElementById("acceleracion").value;
+            let tiempo= document.getElementById("tiempo").value;
+            let posicion = calculaPositionMRUA(acceleracion,tiempo);
+            let display = document.getElementById("display");
+            display.innerHTML="La posicion X es: "+posicion+" metros "+ alcanzaExtratosfera(posicion);
+        }
+        
+        function alcanzaExtratosfera(x){
+            /***************Alcanza extratosfera devuelve true si es mayor a 10k metros y false en caso contrario****************/
+        if(x >= 10000){
+        return "Alcanza la extratosfera";
+        }
+        else{
+        return "No alcanza la extratosfera";
+    }
+        }
+    
+        function calculaPositionMRUA(a,t){
+            posicion = a*(Math.pow(t,2))/2;
+            return posicion;
+        }  
+        function calculaPosicion(){
+            let acceleracion = parseFloat(prompt("Dime la acceleracion"));
+            let tiempo = parseFloat(prompt("Dime el tiempo en S'"));
+            let posicion  = calculaPosicionMRUA(acceleracion,tiempo);
+            alert("La posicion X es: "+posicion);
+        } 
+
+    </script>
+</body>
+</html>
