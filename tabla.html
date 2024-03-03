@@ -19,7 +19,7 @@
     td{
       border:2px solid blue;
     }
-    table{align-items: center;}
+    table{border: 1px solid cyan;}
 
   </style>
 </head>
@@ -30,7 +30,7 @@
 <p>Ingresa un numero: <input type="number" id="numero" min="0" max="10"></p>
   <button onclick="generarTabla()">Generar Tabla</button>
 
-  <div id="tablaDiv"></div>
+  <div id="tablaDiv" style="width: 500px; height: 700px;"></div>
 
   <script>
     function generarTabla() {
