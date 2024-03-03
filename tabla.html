@@ -20,7 +20,10 @@
     td{
       border:2px solid blue;
     }
-    table{border: 1px solid cyan;}
+    table{
+      margin: auto;
+      text-align: center;
+    }
 
   </style>
 </head>
@@ -42,7 +45,7 @@
         return;
       }
 
-      var tablaHTML = '<h3>Tabla del ' + numero + '</h3><table border="1">';
+      var tablaHTML = '<h3>Tabla del ' + numero + '</h3><table border="1" style="border:2px solid cyan;">';
       for (var i = 0; i <= 10; i++) {
         tablaHTML += '<tr><td>' + numero + ' x ' + i + '</td><td>' + (numero * i) + '</td></tr>';
       }
