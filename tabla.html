@@ -13,6 +13,14 @@
       margin-top: 20px;
       margin:auto;
     }
+    tr{
+      border:2px solid blue;
+    }
+    td{
+      border:2px solid blue;
+    }
+    table{align-items: center;}
+
   </style>
 </head>
 <body>
@@ -34,7 +42,7 @@
       }
 
       var tablaHTML = '<h3>Tabla del ' + numero + '</h3><table border="1">';
-      for (var i = 1; i <= 10; i++) {
+      for (var i = 0; i <= 10; i++) {
         tablaHTML += '<tr><td>' + numero + ' x ' + i + '</td><td>' + (numero * i) + '</td></tr>';
       }
       tablaHTML += '</table>';
