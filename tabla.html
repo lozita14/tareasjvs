@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla del 8</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #tablaDiv {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Generador de Tabla</h2>
+  
+  <label for="numero">Ingrese un número:</label>
+  <input type="number" id="numero" min="1" max="10">
+  <button onclick="generarTabla()">Generar Tabla</button>
+
+  <div id="tablaDiv"></div>
+
+  <script>
+    function generarTabla() {
+      // Obtener el número ingresado por el usuario
+      var numero = document.getElementById('numero').value;
+
+      // Validar que se haya ingresado un número
+      if (numero === '' || isNaN(numero)) {
+        alert('Por favor, ingrese un número válido.');
+        return;
+      }
+
+      // Crear la tabla del número ingresado
+      var tablaHTML = '<h3>Tabla del ' + numero + '</h3><table border="1">';
+      for (var i = 1; i <= 10; i++) {
+        tablaHTML += '<tr><td>' + numero + ' x ' + i + '</td><td>' + (numero * i) + '</td></tr>';
+      }
+      tablaHTML += '</table>';
+
+      // Mostrar la tabla en el div correspondiente
+      document.getElementById('tablaDiv').innerHTML = tablaHTML;
+    }
+  </script>
+
+</body>
+</html>
