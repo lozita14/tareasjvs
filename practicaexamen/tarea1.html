@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de moviles</title>
+</head>
+<body>
+    <h1>Venta de moviles</h1>
+    <form action="procesa-venta.php" onsubmit="validaformulario()">
+    <label for="color-movil">Color del móvil <input id="color-movil" type="color" style="display:none;"></label>
+    <input type="submit" value="Comprar">
+
+    <label for="producto">Producto</label>
+    <select onchange="habilitacolor()" name="producto" id="producto">
+        <option value="elija">Elija producto...</option>
+        <option value="movil">Movil</option>
+        <option value="tablet">Tablet</option>
+    </select>
+    </form>
+
+    <h1>Datos de envio</h1>
+    <label for="pais">Pais</label>
+    <select name="destino" id="destino" onchange="españita()">
+        <option value="Pais">paises</option>
+        <option value="España">España</option>
+        <option value="fuera de España">otro</option>
+    </select>
+    <label for="provincia" style="visibility:hidden;" id="label">Provincia</label>
+    <select name="provincia" id="provincian" style="visibility:hidden;">
+        <option value="prov1">Albacete</option>
+        <option value="prov2">Ciudad Real</option>
+        <option value="prov3">otros</option>
+    </select>
+    <script>
+    function españita(){
+        let esp = document.getElementById("destino");
+        let prov = document.getElementById("label");
+        let select = document.getElementById("provincian");
+
+        if(esp.value == "España"){
+            prov.style.visibility="visible";
+            select.style.visibility="visible";
+        }else{
+            prov.style.visibility="hidden";
+            select.style.visibility="hidden";
+        }
+        
+    }
+
+        function validaformulario(){
+            let colorMovil  = document.getElementById("color-movil");
+            if (colorMovil.value !== "#ff0000" && colorMovil.value !== "#ffff00") {
+             alert("solo quedan rojos y amarillos");
+             colorMovil.focus();
+             return false;
+            } else {
+            alert("");
+            }
+        }
+        function habilitacolor(){
+            let habilitacolor = document.getElementById("producto");
+            if(habilitacolor.value == "movil"){
+                let colormovil = document.getElementById("color-movil");
+                colormovil.removeAttribute("disabled");
+                colormovil.style.display="block";
+            }else{
+                colormovil.setAttribute("disabled","");
+                colormovil.style.display="none";
+            }
+
+        }
+    </script>
+</body>
+</html>
