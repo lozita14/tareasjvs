@@ -3,8 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pais</title>
+    <title>Prueba examen</title>
 </head>
 <body>
+    <h1>repaso examen</h1>
+    <input type="button" onclick="alineacion()" value="alineacion">
+    <input type="button" onclick="factorial()" value="factorial">
+    <input type="button" onclick="parimpar()" value="parimpar">
+    <input type="button" onclick="correo()" value="registro">
+    <div id="tabla1" style="display:table;">
+    <input type="button" onclick="mostrarcorreoyusuario()" value="mostrar usuario y correo">
+    </div>
+    <script type="text/javascript">
+    function alineacion(){
+        var alineacion = ["Benzema","Bale","Marcelo","Sergio R"];
+        let x = prompt("Dime un número");
+    alert(alineacion[x]);
+    }
+
+    function factorial(){
+        var numero=prompt("Dime un numero");
+        var factorial = 1;
+        for(var i=1;i<=numero;i++){
+            factorial=factorial*i
+        }
+        alert("El fatorial de "+numero+" es "+ factorial);
+    }
+
+    function parimpar(){
+        var num = prompt("dime un numero"); 
+            if(num%2 == 0){
+                alert("es par");
+            }else{
+                alert("es impar");
+            }
+    }
+
+    function correo(){
+    var correo = prompt("Escribe tu correo");
+    var usuario = prompt("Escribe tu usuario");
+    
+
+    }
+
+    </script>
 </body>
 </html>
